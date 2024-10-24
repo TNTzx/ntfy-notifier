@@ -10,7 +10,9 @@ import com.github.mizosoft.methanol.Methanol;
 import com.github.mizosoft.methanol.MutableRequest;
 
 import me.tntz.ntfyNotifier.NtfyNotifier;
+import me.tntz.ntfyNotifier.commands.MinPriority;
 import me.tntz.ntfyNotifier.config.*;
+import net.minecraft.server.command.CommandManager;
 
 
 public class Connector {
@@ -59,7 +61,7 @@ public class Connector {
             NtfyNotifier.LOGGER.warn(
                     "Message with title \"{}\" and priority {} cannot be sent as minimum priority level is set to {}. " +
                             "Use {} to set a higher priority level.",
-                    title, priority.POST_NAME, PriorityManager.minPriority.POST_NAME, "TODO command" // TODO command
+                    title, priority.POST_NAME, PriorityManager.minPriority.POST_NAME, "/" + NtfyNotifier.MOD_ID + ":" + MinPriority.baseName
             );
             return;
         }

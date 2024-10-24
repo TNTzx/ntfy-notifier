@@ -13,9 +13,11 @@ import static net.minecraft.server.command.CommandManager.*;
 
 public class MinPriority {
 
+    public static String baseName = "minpriority";
+
     public static void onInitialize() {
         CommandRegistrationCallback.EVENT.register(((commandDispatcher, commandRegistryAccess, registrationEnvironment) ->
-                commandDispatcher.register(CommandRegisterer.getRootLiteral("minpriority")
+                commandDispatcher.register(CommandRegisterer.getRootLiteral(baseName)
                         .requires(CommandRegisterer::requiresOp)
                         .then(literal("set")
                                 .then(PriorityArgument.arg

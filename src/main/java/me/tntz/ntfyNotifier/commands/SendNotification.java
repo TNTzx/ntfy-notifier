@@ -47,7 +47,7 @@ public class SendNotification {
     private static Priority parsePriority(CommandContext<ServerCommandSource> ctx) throws CommandSyntaxException {
         return PriorityArgument.getArgValue(ctx);
     }
-    private static String[] parseTags(CommandContext<ServerCommandSource> ctx) throws CommandSyntaxException {
+    private static String[] parseTags(CommandContext<ServerCommandSource> ctx) {
         return TagsArgument.getArgValue(ctx);
     }
 
