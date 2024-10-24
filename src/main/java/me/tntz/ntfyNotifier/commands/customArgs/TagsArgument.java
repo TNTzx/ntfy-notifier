@@ -9,7 +9,7 @@ import static net.minecraft.server.command.CommandManager.argument;
 
 public class TagsArgument {
     public static String ARG_NAME = "tags";
-    public static RequiredArgumentBuilder<ServerCommandSource, String> arg = argument(ARG_NAME, StringArgumentType.word())
+    public static RequiredArgumentBuilder<ServerCommandSource, String> arg = argument(ARG_NAME, StringArgumentType.string())
             .suggests((ctx, builder) -> {
                 builder.suggest("tag1,tag2,tag3,...,tagLast");
                 return builder.buildFuture();
