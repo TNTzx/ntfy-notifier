@@ -1,0 +1,9 @@
+name: ntfy-server
+services:
+    ntfy:
+        ports:
+            - 80:80
+        stdin_open: true
+        tty: true
+        image: binwiederhier/ntfy
+        command: serve

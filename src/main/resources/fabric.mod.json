@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "ntfy-notifier",
+  "version": "${version}",
+  "name": "NtfyNotifier",
+  "description": "Mod that integrates server messages to Gotify.",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/ntfy-notifier/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "me.tntz.ntfyNotifier.client.NtfyNotifierClient"
+    ],
+    "main": [
+      "me.tntz.ntfyNotifier.NtfyNotifier"
+    ]
+  },
+  "mixins": [
+    "ntfy-notifier.mixins.json",
+    {
+      "config": "ntfy-notifier.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
