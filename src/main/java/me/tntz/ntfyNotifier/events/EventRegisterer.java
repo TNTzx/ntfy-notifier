@@ -16,4 +16,8 @@ public class EventRegisterer {
             NtfyNotifier.LOGGER.error("Unexpected error while trying to send message with title \"{}\": {}", title, e);
         }
     }
+
+    public static void onInitialize() {
+        OnServerStart.onInitialize();
+    }
 }

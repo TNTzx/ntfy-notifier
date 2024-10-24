@@ -3,7 +3,6 @@ package me.tntz.ntfyNotifier.commands;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import me.tntz.ntfyNotifier.NtfyNotifier;
 import net.minecraft.server.command.ServerCommandSource;
-import org.apache.logging.log4j.core.jmx.Server;
 
 import static net.minecraft.server.command.CommandManager.literal;
 
