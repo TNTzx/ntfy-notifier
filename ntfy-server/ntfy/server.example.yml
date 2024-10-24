@@ -1,7 +1,0 @@
-behind-proxy: true
-
-base-url: "http://domain.tld"
-listen-http: ":80"
-listen-https: ":443"
-key-file: "/etc/letsencrypt/live/domain.tld/privkey.pem"
-cert-file: "/etc/letsencrypt/live/domain.tld/cert.pem"
