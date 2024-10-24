@@ -1,5 +1,7 @@
 package me.tntz.ntfyNotifier.config;
 
+import me.tntz.ntfyNotifier.ntfy.MessageSettings;
+
 import java.util.HashMap;
 
 public class Config {
@@ -8,14 +10,6 @@ public class Config {
     public int port = 80;
     public String topic = "topic-here";
 
-    public HashMap<String, Object> getData() {
-        HashMap<String, Object> data = new HashMap<>();
-        data.put("enabled", enabled);
-        data.put("serverURL", serverURL);
-        data.put("port", port);
-        data.put("topic", topic);
-
-        return data;
-    }
+    public ConfigMessageSettings messageSettings = new ConfigMessageSettings();
 }
 

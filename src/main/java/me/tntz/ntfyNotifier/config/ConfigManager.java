@@ -48,7 +48,7 @@ public class ConfigManager {
 
         TomlWriter tomlWriter = new TomlWriter();
         StringWriter stringWriter = new StringWriter();
-        tomlWriter.write(defaultConfig.getData(), stringWriter);
+        tomlWriter.write(defaultConfig, stringWriter);
         String parsed = stringWriter.toString();
 
         try (FileWriter myWriter = new FileWriter(CONFIG_FILE)) {
@@ -66,8 +66,14 @@ public class ConfigManager {
         return cachedConfig;
     }
 
-    public static Config getConfig() throws IOException {
-        if (cachedConfig == null) return reloadConfig();
+    public static Config getConfig() {
+        if (cachedConfig == null) {
+            try {
+                return reloadConfig();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
         return cachedConfig;
     }
 }
