@@ -1,12 +1,12 @@
 package me.tntz.ntfyNotifier.ntfy;
 
-import java.util.HashMap;
-
 public class MessageSettings {
     public Priority priority = Priority.DEFAULT;
     public String[] tags = new String[]{};
 
+    @SuppressWarnings("unused")
     public MessageSettings() {}
+    @SuppressWarnings("unused")
     public MessageSettings(String[] tags) {
         this.tags = tags;
     }

@@ -2,12 +2,10 @@ package me.tntz.ntfyNotifier.events;
 
 import me.tntz.ntfyNotifier.config.ConfigManager;
 import me.tntz.ntfyNotifier.ntfy.MessageSettings;
-import net.fabricmc.fabric.api.message.v1.ServerMessageEvents;
 import net.fabricmc.fabric.api.networking.v1.PacketSender;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayNetworkHandler;
-import net.minecraft.text.Text;
 
 public class OnPlayerFlow {
     public static void onInitialize() {

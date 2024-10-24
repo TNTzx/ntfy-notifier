@@ -16,7 +16,7 @@ import me.tntz.ntfyNotifier.config.*;
 public class Connector {
     private static final Methanol client = Methanol.create();
 
-    private static URI getMessageUri() throws IOException, URISyntaxException {
+    private static URI getMessageUri() throws URISyntaxException {
         Config config = ConfigManager.getConfig();
         URI oldURI = new URI(config.serverURL);
 
@@ -32,7 +32,7 @@ public class Connector {
     }
 
 
-    private static boolean isEnabled() throws IOException {
+    private static boolean isEnabled() {
         return ConfigManager.getConfig().enabled;
     }
 

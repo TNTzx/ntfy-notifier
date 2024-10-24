@@ -1,11 +1,8 @@
 package me.tntz.ntfyNotifier.ntfy;
 
-import com.google.common.collect.Lists;
-
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 import java.util.Objects;
-import java.util.Optional;
 
 public enum Priority {
     MAX("max", 5),

@@ -4,11 +4,7 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import me.tntz.ntfyNotifier.ntfy.Priority;
 import net.minecraft.server.command.ServerCommandSource;
-
-import java.util.Arrays;
-import java.util.NoSuchElementException;
 
 import static net.minecraft.server.command.CommandManager.argument;
 
@@ -20,7 +16,7 @@ public class TagsArgument {
                 return builder.buildFuture();
             });
 
-    public static String[] getArgValue(CommandContext<ServerCommandSource> ctx) throws CommandSyntaxException {
+    public static String[] getArgValue(CommandContext<ServerCommandSource> ctx) {
         String tags = ctx.getArgument(ARG_NAME, String.class);
         return tags.split(",");
     }

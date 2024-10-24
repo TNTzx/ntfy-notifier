@@ -1,7 +1,6 @@
 package me.tntz.ntfyNotifier.events;
 
 import me.tntz.ntfyNotifier.config.ConfigManager;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.message.v1.ServerMessageEvents;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.text.Text;
