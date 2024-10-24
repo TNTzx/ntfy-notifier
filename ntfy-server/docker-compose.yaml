@@ -1,9 +1,30 @@
 name: ntfy-server
 services:
     ntfy:
-        ports:
-            - 80:80
+        container_name: ntfy
         stdin_open: true
         tty: true
         image: binwiederhier/ntfy
         command: serve
+        volumes:
+            - ./ntfy:/etc/ntfy
+            - ./certbot/conf/:/etc/letsencrypt/:rw
+
+    nginx:
+        container_name: nginx
+        image: nginx:latest
+        ports:
+            - 25585:443
+        restart: always
+        volumes:
+            - ./nginx/conf/:/etc/nginx/conf.d/:ro
+            - ./certbot/www/:/var/www/certbot/:ro
+            - ./certbot/conf/:/etc/letsencrypt/:rw
+
+
+    certbot:
+        container_name: certbot
+        image: certbot/certbot:latest
+        volumes:
+            - ./certbot/www/:/var/www/certbot/:rw
+            - ./certbot/conf/:/etc/letsencrypt/:rw

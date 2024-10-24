@@ -117,3 +117,10 @@ runs/
 
 # Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
 !gradle-wrapper.jar
+
+
+
+# Server
+/ntfy-server/certbot/**/*
+/ntfy-server/**/nginx.conf
+/ntfy-server/**/server.yml

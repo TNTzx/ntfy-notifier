@@ -12,7 +12,6 @@ import com.github.mizosoft.methanol.MutableRequest;
 import me.tntz.ntfyNotifier.NtfyNotifier;
 import me.tntz.ntfyNotifier.commands.MinPriority;
 import me.tntz.ntfyNotifier.config.*;
-import net.minecraft.server.command.CommandManager;
 
 
 public class Connector {
