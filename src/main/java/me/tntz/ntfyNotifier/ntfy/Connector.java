@@ -43,6 +43,9 @@ public class Connector {
     public static void sendMessage(String title, String message, Priority priority) throws IOException, URISyntaxException, InterruptedException {
         sendMessage(title, message, priority, new String[]{});
     }
+    public static void sendMessage(String title, String message, MessageSettings messageSettings) throws IOException, URISyntaxException, InterruptedException {
+        sendMessage(title, message, messageSettings.priority, messageSettings.tags);
+    }
     public static void sendMessage(String title, String message, Priority priority, String[] tags) throws IOException, URISyntaxException, InterruptedException {
         if (!isEnabled()) {
             NtfyNotifier.LOGGER.warn(
