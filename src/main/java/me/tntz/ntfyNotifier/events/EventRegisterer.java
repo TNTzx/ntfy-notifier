@@ -18,6 +18,9 @@ public class EventRegisterer {
     }
 
     public static void onInitialize() {
-        OnServerStart.onInitialize();
+        OnServerLifecycle.onInitialize();
+        OnPlayerFlow.onInitialize();
+        OnChatMessage.onInitialize();
+        OnGameMessage.onInitialize();
     }
 }

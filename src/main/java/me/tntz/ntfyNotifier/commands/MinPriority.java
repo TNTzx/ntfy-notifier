@@ -25,12 +25,13 @@ public class MinPriority {
                         .then(literal("get")
                                 .executes(MinPriority::get)
                         )
-        )));
+                )
+        ));
     }
 
 
     public static int set(CommandContext<ServerCommandSource> ctx) throws CommandSyntaxException {
-        Priority priority = PriorityArgument.getArg(ctx);
+        Priority priority = PriorityArgument.getArgValue(ctx);
         PriorityManager.setMinPriority(priority);
         ctx.getSource().sendFeedback(
                 () -> Text.literal("Set minimum priority of Ntfy notifications to " + priority.POST_NAME + "."),

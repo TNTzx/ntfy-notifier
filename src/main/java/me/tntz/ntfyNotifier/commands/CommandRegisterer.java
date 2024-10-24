@@ -18,5 +18,6 @@ public class CommandRegisterer {
 
     public static void onInitialize() {
         MinPriority.onInitialize();
+        SendNotification.onInitialize();
     }
 }

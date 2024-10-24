@@ -9,7 +9,6 @@ import net.minecraft.server.command.ServerCommandSource;
 
 import static net.minecraft.server.command.CommandManager.*;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 
@@ -24,7 +23,7 @@ public class PriorityArgument {
                 return builder.buildFuture();
             });
 
-    public static Priority getArg(CommandContext<ServerCommandSource> ctx) throws CommandSyntaxException {
+    public static Priority getArgValue(CommandContext<ServerCommandSource> ctx) throws CommandSyntaxException {
         String priority = ctx.getArgument(ARG_NAME, String.class);
         try {
             return Priority.fromPostName(priority);
@@ -34,6 +33,5 @@ public class PriorityArgument {
                     "Good priority names are: " + String.join(", ", Arrays.stream(Priority.values()).map(prio -> prio.POST_NAME).toArray(String[]::new))
             );
         }
-
     }
 }
